@@ -3,3 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+@font-face {
+    font-family: iranyekan;
+    src: url(../fonts/iranyekan/IRANYekanWeb.eot);
+    src: url(../fonts/iranyekan/IRANYekanWeb.ttf);
+    src: url(../fonts/iranyekan/IRANYekanWeb.woff);
+    src: url(../fonts/iranyekan/IRANYekanWeb.woff2);
+}
