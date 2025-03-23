@@ -7,7 +7,7 @@ login.addEventListener("click", () => {
 });
 
 signUp.addEventListener("click", () => {
-  window.location.href = `http://localhost/carWeb/signUp.html`;
+  window.location.href = `http://localhost/carWeb/signUp.php`;
 });
 
 shoppingBasket.addEventListener("click", () => {
