@@ -26,8 +26,7 @@
           align-items: center;
           img {
             width: 200px;
-            height: 100%;
-            object-fit: cover;
+            height: 80%;
           }
         }
       }
