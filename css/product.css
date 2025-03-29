@@ -86,9 +86,9 @@
         background-color: #ed2525;
         color: white;
         cursor: pointer;
-        transition: 300ms;
+        transition: 400ms;
         &:hover {
-          background-color: #c10000;
+          background-color: #b10202;
         }
       }
       #showbtn {
@@ -98,15 +98,35 @@
         border: none;
         position: absolute;
         bottom: 20px;
-        right: 20%;
+        right: 19%;
+        margin-right: 16px;
         font-size: 14px;
         font-family: iranyekan;
         background-color: #0084cb;
         color: white;
         cursor: pointer;
-        transition: 300ms;
+        transition: 400ms;
         &:hover {
-          background-color: #025e90;
+          background-color: #025481;
+        }
+      }
+      #editbtn {
+        width: 100px;
+        height: 40px;
+        border-radius: 6px;
+        border: none;
+        position: absolute;
+        bottom: 20px;
+        right: 31%;
+        margin-right: 16px;
+        font-size: 14px;
+        font-family: iranyekan;
+        background-color: #028f09;
+        color: white;
+        cursor: pointer;
+        transition: 400ms;
+        &:hover {
+          background-color: #036307;
         }
       }
     }

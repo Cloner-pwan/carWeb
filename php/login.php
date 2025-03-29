@@ -7,12 +7,15 @@ if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['pas
     $password = $_POST['password'];
     $query = "SELECT username, password from users where username = '$username' AND password = '$password'";
     $result = mysqli_query($link, $query);
-    if ($result && mysqli_num_rows($result) > 0) {
+
+    $queryCheckAdmin = "SELECT username, password from admins where username = 'admin' AND password = '$password'";
+    $result2 = mysqli_query($link, $queryCheckAdmin);
+    if ($result2 && mysqli_num_rows($result2) > 0) {
         echo "<script>
             let confirmBox = document.querySelector('.confirmBox');
             confirmBox.style.display = 'flex';
             setTimeout(() => {
-            window.location.href = `http://localhost/carWeb/php/index.php`;
+            window.location.href = `http://localhost/carWeb/php/admin.php`;
             }, 3000);
             </script>";
     } else {
@@ -21,9 +24,9 @@ if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['pas
             rejectBox.style.display = 'flex';
             </script>";
     }
-    
-    
-    
+
+
+
     // $result = mysqli_query($link, $query);
     // if ($result && mysqli_num_rows($result) > 0) {
     //     echo "true";

@@ -11,9 +11,25 @@ if (isset($_POST['realname']) && !empty($_POST['realname']) && isset($_POST['use
     if (mysqli_connect_errno()) {
         exit("خطا به شرح زیر است" . mysqli_connect_errno());
     }
-
-    if ($password != $repassword) {
-        echo "<script>alert('تکرار رمز عبور اشتباه است');</script>";
+    if ($username == "admin"){
+        $queryAddAdmin = "INSERT INTO admins (realname,username,password,email,type)
+        VALUES ('$realname','$username','$password','$email','1')";
+        if (mysqli_query( $link, $queryAddAdmin) === true) {
+            echo "<script>
+            // alert('عضویت شما با موفقیت ثبت شد');
+            // 
+            let confirmBox = document.querySelector('.confirmBox');
+            confirmBox.style.display = 'flex';
+            setTimeout(() => {
+            window.location.href = `http://localhost/carWeb/php/index.php`;
+            }, 3000);
+            </script>";
+        } else {
+            echo "<script>
+            let rejectBox = document.querySelector('.rejectBox');
+            rejectBox.style.display = 'flex';
+            </script>";
+        }
     } else {
         $query = "INSERT INTO users (realname,username,password,email,type)
             VALUES ('$realname','$username','$password','$email','0')";
@@ -34,5 +50,5 @@ if (isset($_POST['realname']) && !empty($_POST['realname']) && isset($_POST['use
             </script>";
         }
     }
-}
+    }
 ?>
