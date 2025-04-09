@@ -1,0 +1,233 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.registerContainer {
+  width: 100%;
+  height: fit-content;
+  margin-top: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .registerBox {
+    width: 700px;
+    height: fit-content;
+    border-radius: 16px;
+    border: 1px solid #d1d1dd;
+    padding: 8px 24px;
+    transition: 400ms;
+    .inputField {
+      width: 100%;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      margin-top: 16px;
+      #submitBtn {
+        width: 120px;
+        height: 40px;
+        background-color: #ef3f3e;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-family: iranyekan;
+        color: white;
+        cursor: pointer;
+        transition: 400ms;
+        &:hover {
+          background-color: #b10202;
+        }
+      }
+      #resetBtn {
+        width: 120px;
+        height: 40px;
+        background-color: #0084cb;
+        border: none;
+        margin-right: 16px;
+        border-radius: 6px;
+        font-size: 16px;
+        font-family: iranyekan;
+        color: white;
+        cursor: pointer;
+        transition: 400ms;
+        &:hover {
+          background-color: #025481;
+        }
+      }
+      .txtContainer {
+        width: 15%;
+        height: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+          font-size: 16px;
+          font-family: iranyekan;
+        }
+      }
+      #pro_name {
+        width: 85%;
+        height: 50px;
+        border-radius: 8px;
+        border: 1px solid #d1d1d1;
+        background-color: transparent;
+        font-family: iranyekan;
+        font-size: 14px;
+        padding: 8px;
+        &:focus {
+          border: 1px solid #d1d1d1;
+          outline: none;
+        }
+      }
+      #pro_code,
+      #pro_qty {
+        width: 35%;
+        height: 50px;
+        border-radius: 8px;
+        border: 1px solid #d1d1d1;
+        background-color: transparent;
+        font-family: iranyekan;
+        font-size: 14px;
+        padding: 8px;
+
+        &:focus {
+          border: 1px solid #d1d1d1;
+          outline: none;
+        }
+      }
+      #pro_price {
+        width: 40%;
+        height: 50px;
+        border-radius: 8px;
+        border: 1px solid #d1d1d1;
+        background-color: transparent;
+        font-family: iranyekan;
+        font-size: 14px;
+        padding: 8px;
+        &:focus {
+          border: 1px solid #d1d1d1;
+          outline: none;
+        }
+      }
+      #pro_discount {
+        width: 30%;
+        height: 50px;
+        border-radius: 8px;
+        border: 1px solid #d1d1d1;
+        background-color: transparent;
+        font-family: iranyekan;
+        font-size: 14px;
+        padding: 8px;
+        &:focus {
+          border: 1px solid #d1d1d1;
+          outline: none;
+        }
+      }
+    }
+    .inputFieldImage {
+      width: 100%;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      margin-top: 16px;
+      position: relative;
+      .txtContainer {
+        width: 15%;
+        height: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+          font-size: 16px;
+          font-family: iranyekan;
+        }
+      }
+      .imageContainer {
+        width: 200px;
+        height: inherit;
+        position: absolute;
+        border: 1px solid #d1d1d1;
+        border-radius: 8px;
+        left: 0;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .inputFieldDesc {
+      width: 100%;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      margin-top: 16px;
+      margin-bottom: 48px;
+      .txtContainer {
+        width: 15%;
+        height: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+          font-size: 16px;
+          font-family: iranyekan;
+        }
+      }
+      #pro_desc {
+        width: 85%;
+        height: 100%;
+        border-radius: 8px;
+        border: 1px solid #d1d1d1;
+        background-color: transparent;
+        font-family: iranyekan;
+        font-size: 14px;
+        padding: 8px;
+        text-align: justify;
+        resize: none;
+        &:focus {
+          border: 1px solid #d1d1d1;
+          outline: none;
+        }
+      }
+    }
+    .confirmBox {
+      width: 100%;
+      height: 60px;
+      background-color: green;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      color: white;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      display: none;
+      transition: 300ms;
+      position: relative;
+      margin-top: 24px;
+      p {
+        font-family: "iranyekan";
+      }
+    }
+    .rejectBox {
+      width: 100%;
+      height: 90px;
+      background-color: #d72f2f;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      color: white;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      display: none;
+      transition: 300ms;
+      position: relative;
+      p {
+        font-size: 16px;
+        font-family: iranyekan;
+      }
+    }
+  }
+}
