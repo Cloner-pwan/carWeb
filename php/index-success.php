@@ -46,7 +46,7 @@ if(isset($_SESSION['username'])){
                 let loginBtn = document.querySelector('#login');
                 loginBtn.addEventListener('click', () => {
                   if (confirm("آیا میخواهید از حساب خود خارج شوید ؟")) {
-                      window.location.href = "http://localhost/carWeb/php/index.php";
+                      window.location.href = "http://localhost/carWeb/php/logOut.php";
                   } 
                 })
               </script>

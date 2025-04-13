@@ -53,6 +53,10 @@
         position: absolute;
         right: 24px;
         cursor: pointer;
+        transition: 300ms;
+        &:hover {
+          background-color: #ba3030;
+        }
       }
       #resetBtn {
         width: 120px;
@@ -68,6 +72,10 @@
         position: absolute;
         right: 160px;
         cursor: pointer;
+        transition: 300ms;
+        &:hover {
+          background-color: #3985c4;
+        }
       }
     }
     .confirmBox {
