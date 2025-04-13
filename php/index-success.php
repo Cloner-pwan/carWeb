@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(isset($_SESSION['username'])){
+    setcookie("username", $_SESSION['username'], time() + 3600, "/");
+}
 ?>
 
 <!DOCTYPE html>
@@ -38,13 +41,13 @@ session_start();
           </div>
           <div class="btn1" id="login">
             <button>
-              <span>ورود</span>
+                <span><?php echo $_COOKIE['username'] ?></span>
               <script>
                 let loginBtn = document.querySelector('#login');
                 loginBtn.addEventListener('click', () => {
-                  if (loginBtn.children[0].children[0].innerHTML === "ورود") {
-                    window.location.href = "http://localhost/carWeb/php/login.php";
-                  }
+                  if (confirm("آیا میخواهید از حساب خود خارج شوید ؟")) {
+                      window.location.href = "http://localhost/carWeb/php/index.php";
+                  } 
                 })
               </script>
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -120,6 +123,9 @@ session_start();
           </div>
           <div class="items">
             <a href="#">ارتباط با ما</a>
+          </div>
+          <div class="items">
+            <a href="accountInfo.php">اطلاعات حساب</a>
           </div>
         </div>
       </div>

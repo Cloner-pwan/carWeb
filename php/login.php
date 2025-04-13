@@ -1,5 +1,8 @@
 <?php
+session_start();
+
 include("../html/login.html");
+
 $link = mysqli_connect("localhost", "root", "", "car_shop");
 
 if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['password']) && !empty($_POST['password'])) {
@@ -10,20 +13,57 @@ if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['pas
 
     $queryCheckAdmin = "SELECT username, password from admins where username = 'admin' AND password = '$password'";
     $result2 = mysqli_query($link, $queryCheckAdmin);
-    if ($result2 && mysqli_num_rows($result2) > 0) {
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $_SESSION['username'] = $username;
+        setcookie('username', $username, time() + 3600);
         echo "<script>
             let confirmBox = document.querySelector('.confirmBox');
             confirmBox.style.display = 'flex';
             setTimeout(() => {
-            window.location.href = `http://localhost/carWeb/php/admin.php`;
+            window.location.href = `http://localhost/carWeb/php/index-success.php`;
             }, 3000);
             </script>";
+    } else if ($result2 && mysqli_num_rows($result2) > 0) {
+        echo "<script>
+        let confirmBox = document.querySelector('.confirmBox');
+        confirmBox.style.display = 'flex';
+        setTimeout(() => {
+        window.location.href = `http://localhost/carWeb/php/admin.php`;
+        }, 3000);
+        </script>";
     } else {
         echo "<script>
             let rejectBox = document.querySelector('.rejectBox');
             rejectBox.style.display = 'flex';
             </script>";
     }
+
+
+
+
+
+
+
+
+
+
+
+
+    // if ($result2 && mysqli_num_rows($result2) > 0) { 
+    //     echo "<script>
+    //         let confirmBox = document.querySelector('.confirmBox');
+    //         confirmBox.style.display = 'flex';
+    //         setTimeout(() => {
+    //         window.location.href = `http://localhost/carWeb/php/admin.php`;
+    //         }, 3000);
+    //         </script>";
+    // } else {
+    //     echo "<script>
+    //         let rejectBox = document.querySelector('.rejectBox');
+    //         rejectBox.style.display = 'flex';
+    //         </script>";
+    // }
 
 
 
@@ -36,4 +76,3 @@ if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['pas
 
 }
 ?>
-
