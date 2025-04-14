@@ -8,7 +8,7 @@
   box-shadow: 10px 3px 15px #d1d1d1;
   border-radius: 0px 0px 16px 16px;
   header {
-    width: 75%;
+    width: 80%;
     height: inherit;
     .headerTop {
       width: 100%;
@@ -62,11 +62,15 @@
         position: absolute;
         left: 0;
         .btn1 {
-          width: 90px;
+          width: fit-content;
           height: 50px;
           border-radius: 32px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           button {
-            width: 100%;
+            width: fit-content;
+            padding: 12px;
             height: 100%;
             border-radius: 32px;
             border: none;
@@ -80,7 +84,7 @@
             align-items: center;
             gap: 8px;
             border: 1px solid #dbdbdb;
-            svg {
+            svg { 
               width: 20px;
               height: 20px;
               fill: none;
