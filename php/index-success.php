@@ -11,7 +11,7 @@ if(isset($_SESSION['username'])){
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>فروش خودرو</title>
+  <title>صفحه شخصی کاربر</title>
   <link rel="stylesheet" href="../css/main.css" type="text/css" />
   <script src="../JS/main.js" defer></script>
 </head>

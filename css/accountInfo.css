@@ -1,16 +1,77 @@
 .infoContainer {
   width: 100%;
-  height: 200px;
+  height: fit-content;
   margin-top: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-flow: column nowrap;
+  .topPart {
+    width: 60%;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+    position: relative;
+    .text {
+      width: fit-content;
+      height: fit-content;
+      p {
+        font-size: 18px;
+        font-family: iranyekan;
+      }
+    }
+    .changeInfoBtnContainer {
+      width: 110px;
+      height: 60px;
+      position: absolute;
+      right: 0;
+      button {
+        width: 100%;
+        height: 100%;
+        border: none;
+        font-family: iranyekan;
+        font-size: 14px;
+        background-color: #ff6347;
+        border-radius: 16px;
+        color: white;
+        transition: 400ms;
+        cursor: pointer;
+        &:hover {
+          background-color: #fc3b19;
+        }
+      }
+    }
+    .printBtnContainer {
+      width: 110px;
+      height: 60px;
+      position: absolute;
+      left: 0;
+      button {
+        width: 100%;
+        height: 100%;
+        border: none;
+        font-family: iranyekan;
+        font-size: 14px;
+        background-color: #228b22;
+        border-radius: 16px;
+        color: white;
+        transition: 400ms;
+        cursor: pointer;
+        &:hover {
+          background-color: #05a205;
+        }
+      }
+    }
+  }
   .infoBox {
     width: 60%;
     height: inherit;
     border: 1px solid #d1d1d1;
     border-radius: 16px;
-    .topPart {
+    .middlePart {
       width: 100%;
       height: 80px;
       border-radius: 16px 16px 0 0;

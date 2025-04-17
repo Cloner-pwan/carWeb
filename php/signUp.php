@@ -1,5 +1,5 @@
 <?php
-include("../html/singUp.html");
+include("../html/signUp.html");
 if (isset($_POST['realname']) && !empty($_POST['realname']) && isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['password']) && !empty($_POST['password']) && isset($_POST['repassword']) && !empty($_POST['repassword']) && isset($_POST['email']) && !empty($_POST['email'])) {
     $realname = $_POST['realname'];
     $username = $_POST['username'];
