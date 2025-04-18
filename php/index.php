@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -127,46 +128,28 @@ session_start();
   </div>
   <div class="productsContainer">
     <div class="productsBoxContainer">
-      <div class="productBox">
-        <div class="productPicContainer">
-          <img src="../img/bmw.jpg" alt="pic" />
+      <?php
+      $link = mysqli_connect("localhost", "root", "", "car_shop");
+      $query = "SELECT title, description, imageAddress, pro_code, price, discount,qty FROM products";
+      $result = mysqli_query($link, $query);  
+      while ($row = mysqli_fetch_array($result)) {
+        echo "<div class='productBox'>
+        <div class='productPicContainer'>
+         <img src='../img/" . $row['imageAddress'] . "' alt='pic' />
         </div>
-        <div class="title">
-          <p>بی ام و 2019 مدل i320</p>
+        <div class='title'>
+          <p>". $row['title'] ."</p>
         </div>
-        <div class="description">
-          <p>
-            وزن این خودرو 1495 کیلوگرم و حجم باک آن 60 لیتر است، همچنین دارای
-            جدیدترین امکانات و آپشن‎های ممکن ازجمله سیستم‌های ترمز و پایداری،
-            سیستم‌های امنیتی، سیستم تهویه هوا، سیستم صوتی و مالتی مدیا، سیستم
-            روشنایی، آینه و شیشه‌ها و سایر امکانات مانند سنسورهای کمکی و
-            دوربین 360 درجه و سیستم کمکی نقطه کور است . سیستم کمکی نقطه کور
-            است .
+        <div class='description'>
+          <p> " . $row['description'] . "
           </p>
         </div>
-        <button id="shopbtn">خرید</button>
-        <button id="showbtn">نمایش</button>
-      </div>
-      <div class="productBox">
-        <div class="productPicContainer">
-          <img src="../img/bmw.jpg" alt="pic" />
-        </div>
-        <div class="title">
-          <p>بی ام و 2019 مدل i320</p>
-        </div>
-        <div class="description">
-          <p>
-            وزن این خودرو 1495 کیلوگرم و حجم باک آن 60 لیتر است، همچنین دارای
-            جدیدترین امکانات و آپشن‎های ممکن ازجمله سیستم‌های ترمز و پایداری،
-            سیستم‌های امنیتی، سیستم تهویه هوا، سیستم صوتی و مالتی مدیا، سیستم
-            روشنایی، آینه و شیشه‌ها و سایر امکانات مانند سنسورهای کمکی و
-            دوربین 360 درجه و سیستم کمکی نقطه کور است . سیستم کمکی نقطه کور
-            است .
-          </p>
-        </div>
-        <button id="shopbtn">خرید</button>
-        <button id="showbtn">نمایش</button>
-      </div>
+        <button id='shopbtn'>خرید</button>
+        <button id='showbtn'>نمایش</button>
+      </div>";
+      }
+      mysqli_close($link);  
+      ?>
     </div>
   </div>
 </body>
