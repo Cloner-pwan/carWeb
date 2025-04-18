@@ -17,10 +17,10 @@
     padding: 32px;
     .productBox {
       width: 100%;
-      height: 300px;
+      height: 350px;
       border-radius: 16px;
       padding: 16px;
-      margin-bottom: 120px;
+      margin-bottom: 32px;
       display: flex;
       align-items: center;
       position: relative;
@@ -41,18 +41,32 @@
         }
       }
       .title {
-        width: 800px;
+        width: 410px;
         height: 25px;
         position: absolute;
         top: 26px;
-        right: 7.6%;
-        padding: 16px;
+        right: 5%;    
         display: flex;
         align-items: center;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
         p {
           font-size: 18px;
           font-family: iranyekan;
           font-weight: 600;
+        }
+      }
+      .pro_code {
+        width: fit-content;
+        height: 30px;
+        position: absolute;
+        top: 22%;
+        right: 5%;
+        p {
+          font-size: 16px;
+          font-family: iranyekan ,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
       }
       .description {
@@ -60,7 +74,7 @@
         height: 150px;
         position: absolute;
         bottom: 80px;
-        right: 8.8%;
+        right: 5%;
         justify-content: center;
         text-align: justify;
         p {
@@ -80,7 +94,7 @@
         border: none;
         position: absolute;
         bottom: 20px;
-        right: 8.8%;
+        right: 5%;
         font-size: 14px;
         font-family: iranyekan;
         background-color: #ed2525;
@@ -98,7 +112,7 @@
         border: none;
         position: absolute;
         bottom: 20px;
-        right: 19%;
+        right: 15%;
         margin-right: 16px;
         font-size: 14px;
         font-family: iranyekan;
@@ -117,7 +131,7 @@
         border: none;
         position: absolute;
         bottom: 20px;
-        right: 31%;
+        right: 27%;
         margin-right: 16px;
         font-size: 14px;
         font-family: iranyekan;
@@ -127,6 +141,38 @@
         transition: 400ms;
         &:hover {
           background-color: #036307;
+        }
+      }
+      .discount {
+        width: 48px;
+        height: 28px;
+        background-color: crimson;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        display: flex;
+        position: absolute;
+        left: 30%;
+        bottom: 26px;
+        border-radius: 15%;
+        p {
+          font-size: 14px;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+      }
+      .price {
+        width: 180px;
+        height: 30px;
+        position: absolute;
+        bottom: 26px;
+        left: 39%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+          font-size: 16px;
+          font-family: iranyekan, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
       }
     }

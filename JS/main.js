@@ -10,4 +10,3 @@ signUp.addEventListener("click", () => {
 shoppingBasket.addEventListener("click", () => {
   window.location.href = `http://localhost/carWeb/shoppingBasket.html`;
 });
-

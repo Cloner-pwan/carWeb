@@ -131,26 +131,40 @@ session_start();
       <?php
       $link = mysqli_connect("localhost", "root", "", "car_shop");
       $query = "SELECT title, description, imageAddress, pro_code, price, discount,qty FROM products";
-      $result = mysqli_query($link, $query);  
+      $result = mysqli_query($link, $query);
       while ($row = mysqli_fetch_array($result)) {
         echo "<div class='productBox'>
-        <div class='productPicContainer'>
-         <img src='../img/" . $row['imageAddress'] . "' alt='pic' />
-        </div>
-        <div class='title'>
-          <p>". $row['title'] ."</p>
-        </div>
-        <div class='description'>
-          <p> " . $row['description'] . "
-          </p>
-        </div>
-        <button id='shopbtn'>خرید</button>
-        <button id='showbtn'>نمایش</button>
-      </div>";
+            <div class='productPicContainer'>
+             <img src='../img/" . $row['imageAddress'] . "' alt='pic' />
+            </div>
+            <div class='title'>
+              <p>" . $row['title'] . "</p>
+            </div>
+            <div class='pro_code'>
+              <p>". "کد " . $row['pro_code'] ."</p>
+            </div>
+            <div class='description'>
+              <p>" . $row['description'] . "</p>
+            </div>
+            <div class='price'>
+            <p>" . "قیمت : " . number_format($row['price']) ."</p>
+            </div>
+            <button id='shopbtn'>خرید</button>
+            <button id='showbtn'>نمایش</button>";
+            
+
+        // Conditional display for discount section
+        if ($row['discount'] != 0) {
+          echo "<div class='discount'>
+                    <p>" . $row['discount'] . "%" . "</p>
+                </div>";
+        }
+        echo "</div>";
       }
-      mysqli_close($link);  
+      mysqli_close($link);
       ?>
     </div>
+
   </div>
 </body>
 
