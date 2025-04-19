@@ -45,7 +45,7 @@
         height: 25px;
         position: absolute;
         top: 26px;
-        right: 5%;    
+        right: 5%;
         display: flex;
         align-items: center;
         display: -webkit-box;
@@ -66,7 +66,8 @@
         right: 5%;
         p {
           font-size: 16px;
-          font-family: iranyekan ,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          font-family: iranyekan, "Franklin Gothic Medium", "Arial Narrow",
+            Arial, sans-serif;
         }
       }
       .description {
@@ -158,7 +159,8 @@
         border-radius: 15%;
         p {
           font-size: 14px;
-          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          font-family: "Franklin Gothic Medium", "Arial Narrow", Arial,
+            sans-serif;
         }
       }
       .price {
@@ -172,8 +174,21 @@
         align-items: center;
         p {
           font-size: 16px;
-          font-family: iranyekan, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+          font-family: iranyekan, Cambria, Cochin, Georgia, Times,
+            "Times New Roman", serif;
         }
+      }
+    }
+    .ifEmpty {
+      width: fit-content;
+      height: fit-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      p {
+        font-size: 16px;
+        font-family: iranyekan;
       }
     }
   }

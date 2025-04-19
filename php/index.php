@@ -141,17 +141,17 @@ session_start();
               <p>" . $row['title'] . "</p>
             </div>
             <div class='pro_code'>
-              <p>". "کد " . $row['pro_code'] ."</p>
+              <p>" . "کد " . $row['pro_code'] . "</p>
             </div>
             <div class='description'>
               <p>" . $row['description'] . "</p>
             </div>
             <div class='price'>
-            <p>" . "قیمت : " . number_format($row['price']) ."</p>
+            <p>" . "قیمت : " . number_format($row['price']) . "</p>
             </div>
             <button id='shopbtn'>خرید</button>
             <button id='showbtn'>نمایش</button>";
-            
+
 
         // Conditional display for discount section
         if ($row['discount'] != 0) {
@@ -160,6 +160,13 @@ session_start();
                 </div>";
         }
         echo "</div>";
+      }
+      $queryCheckIfEmpty = "SELECT * FROM products";
+      $resultCheckIfEmpty = mysqli_query($link, $queryCheckIfEmpty);
+      if ($resultCheckIfEmpty && mysqli_num_rows($resultCheckIfEmpty) <= 0) {
+        echo " <div class='ifEmpty'>
+                <p>در حال حاضر کالایی موجود نمی‌باشد</p>
+            </div>";
       }
       mysqli_close($link);
       ?>
