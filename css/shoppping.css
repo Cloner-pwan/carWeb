@@ -1,0 +1,158 @@
+.prod_container {
+  width: 100%;
+  height: 450px;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .squareBox {
+    width: 1300px;
+    height: inherit;
+    display: flex;
+    .leftSide_container {
+      width: 40%;
+      height: inherit;
+      border-radius: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      flex-flow: column nowrap;
+      img {
+        width: 100%;
+        height: 75%;
+        border-radius: 16px;
+      }
+      .price_container {
+        width: 100%;
+        height: 25%;
+        position: relative;
+        .price {
+          width: fit-content;
+          height: 30px;
+          padding: 16px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          bottom: 12%;
+          p {
+            font-size: 16px;
+            font-family: iranyekan, "Franklin Gothic Medium", "Arial Narrow",
+              Arial, sans-serif;
+            text-decoration: line-through;
+            color: rgb(188, 188, 188);
+          }
+        }
+        .discount {
+          width: 50px;
+          height: 30px;
+          background-color: rgb(240, 52, 52);
+          border-radius: 16px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          font-family: iranyekan, "Franklin Gothic Medium", "Arial Narrow",
+            Arial, sans-serif;
+          position: absolute;
+          bottom: 30%;
+          right: 10%;
+          p {
+            font-size: 14px;
+          }
+        }
+        .discounted {
+          width: fit-content;
+          height: 30px;
+          padding: 16px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          top: 24px;
+          p {
+            font-size: 16px;
+            font-family: iranyekan, "Franklin Gothic Medium", "Arial Narrow",
+              Arial, sans-serif;
+          }
+        }
+      }
+    }
+    .rightSide_container {
+      width: 60%;
+      height: inherit;
+      display: flex;
+      position: relative;
+      .title {
+        width: fit-content;
+        height: fit-content;
+        padding: 12px;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        p {
+          font-size: 18px;
+          font-family: iranyekan;
+          text-align: justify;
+          direction: rtl;
+          font-weight: 600;
+        }
+      }
+      .vrLine {
+        width: 90%;
+        height: 1px;
+        background-color: #d1d1d1;
+        position: absolute;
+        top: 60px;
+        right: 22px;
+      }
+      .pro_code {
+        width: fit-content;
+        height: fit-content;
+        padding: 12px;
+        position: absolute;
+        top: 72px;
+        right: 12px;
+        p {
+          font-size: 18px;
+          font-family: iranyekan;
+          text-align: justify;
+          direction: rtl;
+          font-weight: 600;
+        }
+      }
+      .desc {
+        width: 730px;
+        height: 240px;
+        padding: 16px;
+        overflow: auto;
+        position: absolute;
+        top: 132px;
+        right: 12px;
+        p {
+          font-size: 16px;
+          font-family: iranyekan;
+          text-align: justify;
+          direction: rtl;
+        }
+      }
+      #shoppingBtn {
+        width: 120px;
+        height: 40px;
+        background-color: #ed2525;
+        border: 0;
+        border-radius: 6px;
+        color: white;
+        font-family: iranyekan;
+        position: absolute;
+        bottom: 20px;
+        right: 32px;
+        cursor: pointer;
+        transition: 400ms;
+        &:hover {
+          background-color: #b10202;
+        }
+      }
+    }
+  }
+}
