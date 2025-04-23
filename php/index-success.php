@@ -125,7 +125,7 @@ if(isset($_SESSION['username'])){
             <a href="#">ارتباط با ما</a>
           </div>
           <div class="items">
-            <a href="accountInfo.php">اطلاعات حساب</a>
+            <a href="accountInfo.php">جزئیات حساب</a>
           </div>
         </div>
       </div>

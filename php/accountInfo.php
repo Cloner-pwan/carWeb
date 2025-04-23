@@ -13,12 +13,14 @@ if ($result && $row = $result->fetch_assoc()) {
     $realname = $row['realname'];
     $username = $row['username'];
     $email = $row['email'];
+    $_SESSION['username'] = $username;
     // if new_realname exists, print it else print the realname
 } else {
     $realname = "نام و نام خانوادگی شما یافت نشد !";
     $username = "نام کاربری یافت نشد !";
     $email = "نشانی الکترونیکی یافت نشد !";
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -41,6 +43,9 @@ if ($result && $row = $result->fetch_assoc()) {
             </div>
             <div class="changeInfoBtnContainer">
                 <button id="changeInfoBtn">ویرایش</button>
+            </div>
+            <div class="DeleteAccountBtn">
+                <button id="DeleteAccountBtn">حذف حساب</button>
             </div>
             <div class="printBtnContainer">
                 <button id="printBtn">چاپ</button>

@@ -65,6 +65,27 @@
         }
       }
     }
+    .DeleteAccountBtn {
+      width: 110px;
+      height: 60px;
+      position: absolute;
+      right: 130px;
+      button {
+        width: 100%;
+        height: 100%;
+        border: none;
+        font-family: iranyekan;
+        font-size: 14px;
+        background-color: rgb(213, 36, 36);
+        border-radius: 16px;
+        color: white;
+        transition: 400ms;
+        cursor: pointer;
+        &:hover {
+          background-color: rgb(180, 30, 30);
+        }
+      }
+    }
   }
   .infoBox {
     width: 60%;

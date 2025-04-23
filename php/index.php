@@ -149,8 +149,10 @@ session_start();
             <div class='price'>
             <p>" . "قیمت : " . number_format($row['price']) . "</p>
             </div>
+            <form action='shopping.php' method='POST'>
+            <input type='hidden' name='pro_code' value='". $row['pro_code'] ."'/>
             <button id='shopbtn'>خرید</button>
-            <button id='showbtn'>نمایش</button>";
+            </form>";
 
 
         // Conditional display for discount section
