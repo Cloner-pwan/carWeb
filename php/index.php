@@ -11,7 +11,7 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>فروش خودرو</title>
   <link rel="stylesheet" href="../css/main.css" type="text/css" />
-  <script src="../JS/main.js" defer></script>
+  <script src="../JS/index.js" defer></script>
 </head>
 
 <body>
@@ -149,9 +149,9 @@ session_start();
             <div class='price'>
             <p>" . "قیمت : " . number_format($row['price']) . "</p>
             </div>
-            <form action='shopping.php' method='POST'>
+            <form action='' method='POST'>
             <input type='hidden' name='pro_code' value='". $row['pro_code'] ."'/>
-            <button id='shopbtn'>خرید</button>
+            <button class='shopbtn'>خرید</button>
             </form>";
 
 

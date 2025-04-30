@@ -35,6 +35,7 @@ function calcPrice($price,$discount) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ثبت سفارش</title>
     <link rel="stylesheet" href="../css/main.css" type="text/css" />
+    <script src="../JS/shopping.js" defer ></script>
 </head>
 
 <body>
@@ -66,7 +67,7 @@ function calcPrice($price,$discount) {
             <div class='desc'>
                 <p>" . $description . "</p>
             </div>
-            <form action='' method='POST'>
+            <form action='shoppingProduct.php' method='POST'>
                 <input type='hidden' name='pro_code' value=''>
                 <button id='shoppingBtn'>ثبت نهایی خرید</button>
             </form>

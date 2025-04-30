@@ -1,7 +1,7 @@
 <?php
 session_start();
-if(isset($_SESSION['username'])){
-    setcookie("username", $_SESSION['username'], time() + 3600, "/");
+if (isset($_SESSION['username'])) {
+  setcookie("username", $_SESSION['username'], time() + 3600, "/");
 }
 ?>
 
@@ -41,13 +41,13 @@ if(isset($_SESSION['username'])){
           </div>
           <div class="btn1" id="login">
             <button>
-                <span><?php echo $_COOKIE['username'] ?></span>
+              <span><?php echo $_COOKIE['username'] ?></span>
               <script>
                 let loginBtn = document.querySelector('#login');
                 loginBtn.addEventListener('click', () => {
                   if (confirm("آیا میخواهید از حساب خود خارج شوید ؟")) {
-                      window.location.href = "http://localhost/carWeb/php/logOut.php";
-                  } 
+                    window.location.href = "http://localhost/carWeb/php/logOut.php";
+                  }
                 })
               </script>
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -133,46 +133,50 @@ if(isset($_SESSION['username'])){
   </div>
   <div class="productsContainer">
     <div class="productsBoxContainer">
-      <div class="productBox">
-        <div class="productPicContainer">
-          <img src="../img/bmw.jpg" alt="pic" />
-        </div>
-        <div class="title">
-          <p>بی ام و 2019 مدل i320</p>
-        </div>
-        <div class="description">
-          <p>
-            وزن این خودرو 1495 کیلوگرم و حجم باک آن 60 لیتر است، همچنین دارای
-            جدیدترین امکانات و آپشن‎های ممکن ازجمله سیستم‌های ترمز و پایداری،
-            سیستم‌های امنیتی، سیستم تهویه هوا، سیستم صوتی و مالتی مدیا، سیستم
-            روشنایی، آینه و شیشه‌ها و سایر امکانات مانند سنسورهای کمکی و
-            دوربین 360 درجه و سیستم کمکی نقطه کور است . سیستم کمکی نقطه کور
-            است .
-          </p>
-        </div>
-        <button id="shopbtn">خرید</button>
-        <button id="showbtn">نمایش</button>
-      </div>
-      <div class="productBox">
-        <div class="productPicContainer">
-          <img src="../img/bmw.jpg" alt="pic" />
-        </div>
-        <div class="title">
-          <p>بی ام و 2019 مدل i320</p>
-        </div>
-        <div class="description">
-          <p>
-            وزن این خودرو 1495 کیلوگرم و حجم باک آن 60 لیتر است، همچنین دارای
-            جدیدترین امکانات و آپشن‎های ممکن ازجمله سیستم‌های ترمز و پایداری،
-            سیستم‌های امنیتی، سیستم تهویه هوا، سیستم صوتی و مالتی مدیا، سیستم
-            روشنایی، آینه و شیشه‌ها و سایر امکانات مانند سنسورهای کمکی و
-            دوربین 360 درجه و سیستم کمکی نقطه کور است . سیستم کمکی نقطه کور
-            است .
-          </p>
-        </div>
-        <button id="shopbtn">خرید</button>
-        <button id="showbtn">نمایش</button>
-      </div>
+      <?php
+      $link = mysqli_connect("localhost", "root", "", "car_shop");
+      $query = "SELECT title, description, imageAddress, pro_code, price, discount,qty FROM products";
+      $result = mysqli_query($link, $query);
+      while ($row = mysqli_fetch_array($result)) {
+        echo "<div class='productBox'>
+            <div class='productPicContainer'>
+             <img src='../img/" . $row['imageAddress'] . "' alt='pic' />
+            </div>
+            <div class='title'>
+              <p>" . $row['title'] . "</p>
+            </div>
+            <div class='pro_code'>
+              <p>" . "کد " . $row['pro_code'] . "</p>
+            </div>
+            <div class='description'>
+              <p>" . $row['description'] . "</p>
+            </div>
+            <div class='price'>
+            <p>" . "قیمت : " . number_format($row['price']) . "</p>
+            </div>
+            <form action='shopping.php' method='POST'>
+            <input type='hidden' name='pro_code' value='" . $row['pro_code'] . "'/>
+            <button class='shopbtn'>خرید</button>
+            </form>";
+
+
+        // Conditional display for discount section
+        if ($row['discount'] != 0) {
+          echo "<div class='discount'>
+                    <p>" . $row['discount'] . "%" . "</p>
+                </div>";
+        }
+        echo "</div>";
+      }
+      $queryCheckIfEmpty = "SELECT * FROM products";
+      $resultCheckIfEmpty = mysqli_query($link, $queryCheckIfEmpty);
+      if ($resultCheckIfEmpty && mysqli_num_rows($resultCheckIfEmpty) <= 0) {
+        echo " <div class='ifEmpty'>
+                <p>در حال حاضر کالایی موجود نمی‌باشد</p>
+            </div>";
+      }
+      mysqli_close($link);
+      ?>
     </div>
   </div>
 </body>

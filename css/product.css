@@ -88,7 +88,7 @@
           color: #585858;
         }
       }
-      #shopbtn {
+      *.shopbtn {
         width: 100px;
         height: 40px;
         border-radius: 6px;
@@ -100,7 +100,7 @@
         font-family: iranyekan;
         background-color: #ed2525;
         color: white;
-        cursor: pointer;
+        cursor: pointer !important;
         transition: 400ms;
         &:hover {
           background-color: #b10202;
