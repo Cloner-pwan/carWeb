@@ -47,10 +47,15 @@
                 width: 400px;
                 height: 40px;
                 border-radius: 8px;
-                border: 1px solid #d1d1d1;
+                border: 1.5px solid #d1d1d1;
                 font-family: iranyekan;
                 font-size: 14px;
                 padding: 8px;
+                transition: 300ms;
+                &:focus {
+                    outline: none;
+                    border: 1.5px solid green;
+                }
               }
               #submitBtn,
               #deleteBtn {
@@ -160,7 +165,6 @@
         width: 45%;
         height: inherit;
         border-radius: 16px 0 0 16px;
-        border-right: 1px solid #a1a1a1;
         padding: 16px;
         .picturebox {
             width: 100%;

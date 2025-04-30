@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_POST['pro_code'])) {
     $pro_code = $_POST['pro_code'];
     $link = mysqli_connect("localhost", "root", "", "car_shop");
@@ -68,7 +69,7 @@ function calcPrice($price,$discount) {
                 <p>" . $description . "</p>
             </div>
             <form action='shoppingProduct.php' method='POST'>
-                <input type='hidden' name='pro_code' value=''>
+                <input type='hidden' name='pro_code' value='". $pro_code ."'>
                 <button id='shoppingBtn'>ثبت نهایی خرید</button>
             </form>
         </div>";
