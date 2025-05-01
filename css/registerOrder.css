@@ -1,0 +1,157 @@
+.info_container {
+  width: 100%;
+  height: 400px;
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightcoral;
+  .infoBox {
+    width: 80%;
+    height: inherit;
+    position: relative;
+    .top {
+      width: 100%;
+      height: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      .user_realname {
+        width: fit-content;
+        height: 100%;
+        padding: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        p {
+            font-family: iranyekan;
+            font-size: 18px;
+        }
+      }
+      .date {
+        width: fit-content;
+        height: 100%;
+        padding: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 0;
+        p {
+            font-family: iranyekan;
+            font-size: 18px;
+        }
+      }
+      .factor_text {
+        width: fit-content;
+        height: 100%;
+        padding: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+            font-family: iranyekan;
+            font-size: 18px;
+        }
+      }
+    }
+    .tableBox {
+        width: 100%;
+        height: 45%;
+        border: 1px solid #d1d1d1;
+        border-radius: 8px;
+        position: absolute;
+        top: 100px;
+        display: flex;
+        align-items: center;
+        flex-flow: column nowrap;
+        .top_part {
+            width: 100%;
+            height: 50%;
+            border-radius: 8px;
+            display: flex;
+            .items {
+                width: fit-content;
+                height: 100%;
+                padding: 16px;
+                border-radius: 0 8px 8px 0;
+                border-left: 1px solid #d1d1d1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                p {
+                    font-size: 16px;
+                    font-family: iranyekan;
+                }
+            }
+            #pro_name {
+                width: 20.5%;
+            }
+            #discounted {
+                width: 19.5%;
+            }
+            #user_realname {
+                width: 18.5%;
+            }
+            #username {
+                width: 230.5px;
+                border: none;
+            }
+        }
+        .bottom_part {
+            width: 100%;
+            height: 50%;
+            border-top: 1px solid #d1d1d1;
+            display: flex;
+            .items {
+                width: fit-content;
+                height: 100%;
+                padding: 16px;
+                border-radius: 0 8px 8px 0;
+                border-left: 1px solid #d1d1d1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                p {
+                    font-size: 16px;
+                    font-family: iranyekan;
+                }
+            }
+            #pro_code {
+                width: 78.05px;
+            }
+            #pro_name {
+                width: 20.5%;
+            }
+            #price {
+                width: 206.63px;
+            }
+            #discount {
+                width: 121.31px;
+            }
+            #discounted {
+                width: 19.5%;
+            }
+            #user_realname {
+                width: 18.5%;
+            }
+            #username {
+                width: 230.5px;
+                border: none;
+            }
+        }
+    }
+  }
+}
+.address_container {
+    width: 100%;
+    height: 300px;
+    background-color: lightskyblue;
+    transform: translateY(-60px);
+    .addressBox {
+        
+    }
+}
