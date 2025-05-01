@@ -1,5 +1,7 @@
-const user_realname = document.querySelector("#user_realname");
-const username = document.querySelector("#username");
-const postal_code = document.querySelector("#postal_code");
+const form = document.querySelector("#form");
 
-
+form.addEventListener("submit", (event) => {
+  if (!confirm("آیا از اطلاعات وارد شده اطمینان دارید ؟")) {
+    event.preventDefault(); // Stop submission only if the user cancels
+  }
+});

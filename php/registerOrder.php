@@ -1,10 +1,23 @@
 <?php
-if (isset($_POST['user_realname']) && isset($_POST['username']) && isset($_POST['postal_code']) && isset($_POST['phoneNumber']) && isset($_POST['pro_code'])) {
+function calcPrice($price, $discount): mixed
+{
+    if ($discount != 0) {
+        $mainPrice = $price;
+        $discountPercent = $discount;
+        $finalPrice = $mainPrice - (($discountPercent / 100) * $mainPrice);
+        return $finalPrice;
+    } else {
+        return $price;
+    }
+}
+
+if (isset($_POST['user_realname']) && isset($_POST['username']) && isset($_POST['postal_code']) && isset($_POST['phoneNumber']) && isset($_POST['pro_code']) && isset($_POST['address'])) {
     $user_realname = $_POST['user_realname'];
     $username = $_POST['username'];
     $postal_code = $_POST['postal_code'];
     $phoneNumber = $_POST['phoneNumber'];
     $pro_code = $_POST['pro_code'];
+    $address = $_POST['address'];
 }
 
 $link = mysqli_connect(hostname: "localhost", username: "root", password: "", database: "car_shop");
@@ -16,29 +29,14 @@ if ($resultReadInfo && mysqli_num_rows($resultReadInfo) > 0) {
     $price = $row['price'];
     $discount = $row['discount'];
 }
-$queryInsertInfo = "INSERT INTO orders (user_realname,username,user_phoneNumber,postal_code,pro_code,pro_name,price,discount) VALUES 
-('$user_realname','$username','$phoneNumber','$postal_code','$pro_code','$title','$price','$discount')";
+
+$finalPrice = calcPrice($price, $discount);
+
+$queryInsertInfo = "INSERT INTO orders (user_realname,username,user_phoneNumber,postal_code,pro_code,pro_name,price,discount,user_address,discounted) VALUES 
+('$user_realname','$username','$phoneNumber','$postal_code','$pro_code','$title','$price','$discount','$address','$finalPrice')";
 $result = mysqli_query($link, $queryInsertInfo);
-if ($result == true) {
-    echo "the information is registered successfully";
-}
 
-if ($link == false) {
-    echo "could't connect to the database !";
-} else {
-    echo "connected to the database";
-}
 
-function calcPrice($price,$discount) {
-    if ($discount != 0) {
-        $mainPrice = $price;
-        $discountPercent = $discount;
-        $finalPrice = $mainPrice - (($discountPercent / 100) * $mainPrice);
-        return $finalPrice;
-    } else {
-        return $price;
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -91,7 +89,7 @@ function calcPrice($price,$discount) {
                     </div>
                 </div>
                 <div class="bottom_part">
-                <div class="items" id="pro_code">
+                    <div class="items" id="pro_code">
                         <p><?php echo $pro_code; ?></p>
                     </div>
                     <div class="items" id="pro_name">
@@ -104,7 +102,7 @@ function calcPrice($price,$discount) {
                         <p><?php echo $discount; ?></p>
                     </div>
                     <div class="items" id="discounted">
-                        <p><?php echo number_format(calcPrice($price,$discount)) ?></p>
+                        <p><?php echo number_format(calcPrice($price, $discount)) ?></p>
                     </div>
                     <div class="items" id="user_realname">
                         <p><?php echo $user_realname; ?></p>
@@ -122,7 +120,7 @@ function calcPrice($price,$discount) {
         </div>
         <div class="addressBox">
             <div class="addressField">
-                <p>میدان شهدا خیابان 17 شهریور میدان شکوفه خیابان غضائری خیابان عامری کوچه اسپندی کوچه احسانی پلاک 4 واحد 6</p>
+                <p><?php echo $address; ?></p>
             </div>
         </div>
         <button id="printbtn">پرینت</button>

@@ -74,9 +74,10 @@ input::-webkit-inner-spin-button {
         font-family: iranyekan;
         font-size: 14px;
         padding: 8px;
+        transition: 300ms;
         &:focus {
-          border: 1px solid #d1d1d1;
           outline: none;
+          border: 1.5px solid green;
         }
       }
       #pro_code,
@@ -89,10 +90,10 @@ input::-webkit-inner-spin-button {
         font-family: iranyekan;
         font-size: 14px;
         padding: 8px;
-
+        transition: 300ms;
         &:focus {
-          border: 1px solid #d1d1d1;
           outline: none;
+          border: 1.5px solid green;
         }
       }
       #pro_price {
@@ -104,9 +105,10 @@ input::-webkit-inner-spin-button {
         font-family: iranyekan;
         font-size: 14px;
         padding: 8px;
+        transition: 300ms;
         &:focus {
-          border: 1px solid #d1d1d1;
           outline: none;
+          border: 1.5px solid green;
         }
       }
       #pro_discount {
@@ -118,9 +120,10 @@ input::-webkit-inner-spin-button {
         font-family: iranyekan;
         font-size: 14px;
         padding: 8px;
+        transition: 300ms;
         &:focus {
-          border: 1px solid #d1d1d1;
           outline: none;
+          border: 1.5px solid green;
         }
       }
     }
@@ -185,9 +188,10 @@ input::-webkit-inner-spin-button {
         padding: 8px;
         text-align: justify;
         resize: none;
+        transition: 300ms;
         &:focus {
-          border: 1px solid #d1d1d1;
           outline: none;
+          border: 1.5px solid green;
         }
       }
     }

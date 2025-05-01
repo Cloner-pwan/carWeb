@@ -25,11 +25,11 @@
           <input type="button" value="بازگشت به صفحه اصلی" id="adminPageBtn">
         </div>
         <div class="confirmBox">
-          <p>ورود شما تایید شد</p>
+          <p>کالای مورد نظر با موفقیت حذف شد</p>
         </div>
         <div class="rejectBox">
           <p>
-            ورود شما با مشکل مواجه شد. رمز عبور یا نام کاربری اشتباه است !
+            چنین کالایی برای حذف وجود ندارد  !
           </p>
         </div>
       </form>
@@ -49,10 +49,24 @@ if (isset($_POST['delete_pro']) && !empty($_POST['delete_pro'])) {
     die('could not connect to the database' . mysqli_connect_error());
   }
   $result = mysqli_query($link, $query);
-  if ($result == true) {
-    echo "deleted";
+  if ($result && mysqli_affected_rows($link) > 0) {
+    echo "<script>
+        let confirmBox = document.querySelector('.confirmBox');
+        confirmBox.style.transition = '400ms';
+        confirmBox.style.display = 'flex';
+        resetBtn.addEventListener('click', () => {
+            confirmBox.style.display = 'none';
+        });
+    </script>";
   } else {
-    echo "could not delete";
+    echo "<script>
+        let rejectBox = document.querySelector('.rejectBox');
+        rejectBox.style.transition = '400ms';
+        rejectBox.style.display = 'flex';
+        resetBtn.addEventListener('click', () => {
+            rejectBox.style.display = 'none';
+        });
+    </script>";
   }
 }
 ?>

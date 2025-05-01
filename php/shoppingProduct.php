@@ -2,18 +2,9 @@
 session_start();
 if (isset($_POST['pro_code'])) {
     $pro_code = $_POST['pro_code'];
-    echo "<p>" . $pro_code . "</p>";
-    $link = mysqli_connect(hostname: "localhost", username: "root", password: "", database: "car_shop");
+    $link = mysqli_connect("localhost",  "root",  "", "car_shop");
     $query = "SELECT title,price,discount,imageAddress FROM products WHERE pro_code = '$pro_code' ";
-    if ($link == false) {
-        echo "could not connect to the database";
-    } else {
-        echo "connected";
-    }
     $result = mysqli_query($link, $query);
-    if ($result == true) {
-        echo "accessed the information";
-    }
     if ($result && mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
         $title = $row['title'];
@@ -50,7 +41,7 @@ if (isset($_POST['pro_code'])) {
         <div class="shoppingBox">
             <div class="rightPart">
                 <div class="inputBox">
-                    <form action="registerOrder.php" method="post">
+                    <form action="registerOrder.php" method="post" id="form">
                         <div class="inputField">
                             <div class="inputTextContainer">
                                 <p>نام و نام خانوادگی سفارش دهنده :</p>
@@ -85,11 +76,18 @@ if (isset($_POST['pro_code'])) {
                                 placeholder="شماره تلفن خود را وارد کنید ..." required />
                         </div>
                         <div class="inputField">
+                            <div class="inputTextContainer">
+                                <p>آدرس :</p>
+                            </div>
+                            <textarea type="text" name="address" id="address" placeholder="آدرس خود را وارد کنید ..."
+                                required></textarea>
+                        </div>
+                        <div class="inputField">
                             <input type="submit" value="ثبت سفارش" id="submitBtn" />
                             <?php echo "<input type='hidden' name='pro_code' value='" . $pro_code . "'>" ?>
                         </div>
                         <div class="confirmBox">
-                            <p>ورود شما تایید شد</p>
+                            <p>سفارش تایید شد</p>
                         </div>
                         <div class="rejectBox">
                             <p>

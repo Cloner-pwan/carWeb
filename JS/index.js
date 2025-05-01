@@ -5,14 +5,11 @@ signUp.addEventListener("click", () => {
   window.location.href = `http://localhost/carWeb/php/signUp.php`;
 });
 
-shoppingBasket.addEventListener("click", () => {
-  window.location.href = `http://localhost/carWeb/shoppingBasket.html`;
-});
 
 allbuttons.forEach((button) => {
   console.log("Found button:", button); // Confirm selection
   button.style.cursor = "pointer"; // Force cursor change
-  button.addEventListener("click", () => {
+  button.addEventListener("click", () => {    
     alert("لطفا وارد حساب کاربری خود شوید !");
   });
 });

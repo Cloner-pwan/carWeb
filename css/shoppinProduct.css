@@ -1,6 +1,6 @@
 .shopping_container {
   width: 100%;
-  height: 500px;
+  height: fit-content;
   margin-top: 100px;
   display: flex;
   justify-content: center;
@@ -12,219 +12,237 @@
     border: 1px solid #d1d1d1;
     display: flex;
     .rightPart {
-        width: 55%;
-        height: inherit;
-        border-radius: 0 16px 16px 0;
+      width: 55%;
+      height: inherit;
+      border-radius: 0 16px 16px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .inputBox {
+        width: 500px;
+        height: fit-content;
+        border-radius: 16px;
+        padding: 8px 24px;
+        display: flex;
+        flex-flow: column nowrap;
+        .inputField {
+          width: 100%;
+          height: 100px;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          .inputTextContainer {
+            width: 100%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            p {
+              font-size: 14px;
+              font-family: iranyekan;
+            }
+          }
+          input {
+            width: 400px;
+            height: 40px;
+            border-radius: 8px;
+            border: 1.5px solid #d1d1d1;
+            font-family: iranyekan;
+            font-size: 14px;
+            padding: 8px;
+            transition: 300ms;
+            &:focus {
+              outline: none;
+              border: 1.5px solid green;
+            }
+          }
+          #submitBtn,
+          #deleteBtn {
+            width: 120px;
+            height: 45px;
+            border-radius: 6px;
+            background-color: #ef3f3e;
+            color: white;
+            border: none;
+            font-family: iranyekan;
+            font-size: 14px;
+            padding: 8px;
+            position: absolute;
+            right: 24px;
+            cursor: pointer;
+            transition: 300ms;
+            margin-top: 8px;
+            &:hover {
+              background-color: #ba3030;
+            }
+          }
+          #resetBtn {
+            width: 110px;
+            height: 40px;
+            border-radius: 6px;
+            /* background-color: #0078D7; */
+            background-color: #48a9f8;
+            color: white;
+            border: none;
+            font-family: iranyekan;
+            font-size: 14px;
+            padding: 8px;
+            position: absolute;
+            right: 150px;
+            cursor: pointer;
+            transition: 300ms;
+            &:hover {
+              background-color: #3985c4;
+            }
+          }
+          #adminPageBtn {
+            width: 150px;
+            height: 40px;
+            border-radius: 6px;
+            /* background-color: #0078D7; */
+            background-color: #269b42;
+            color: white;
+            border: none;
+            font-family: iranyekan;
+            font-size: 12px;
+            padding: 8px;
+            position: absolute;
+            left: 25px;
+            cursor: pointer;
+            transition: 300ms;
+            &:hover {
+              background-color: #15762b;
+            }
+          }
+          #address {
+            width: 400px;
+            height: 100px;
+            resize: none;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-radius: 8px;
+            border: 1.5px solid #d1d1d1;
+            font-family: iranyekan;
+            font-size: 14px;
+            padding: 8px;
+            transition: 300ms;
+            &:focus {
+              outline: none;
+              border: 1.5px solid green;
+            }
+          }
+        }
+        .confirmBox {
+          width: 100%;
+          height: 60px;
+          background-color: green;
+          border-radius: 12px;
+          color: white;
+          display: none;
+          flex-flow: column nowrap;
+          justify-content: center;
+          align-items: center;
+          transition: 300ms;
+          transform: translateX(calc(50% - 452px));
+          p {
+            font-family: iranyekan;
+          }
+        }
+        .rejectBox {
+          width: 100%;
+          height: 90px;
+          background-color: #d72f2f;
+          border-radius: 12px;
+          margin-bottom: 16px;
+          color: white;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: center;
+          align-items: center;
+          display: none;
+          transition: 300ms;
+          position: relative;
+          p {
+            font-size: 14px;
+            font-family: iranyekan;
+          }
+        }
+      }
+    }
+    .leftPart {
+      width: 45%;
+      height: inherit;
+      border-radius: 16px 0 0 16px;
+      padding: 16px;
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 8px;
+      .picturebox {
+        width: 100%;
+        height: 260px;
+        border-radius: 16px;
+        border: 1px solid #d1d1d1;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 16px;
+        }
+      }
+      .title {
+        width: fit-content;
+        height: 24px;
+        margin-top: 32px;
         display: flex;
         justify-content: center;
         align-items: center;
-        .inputBox {
-            width: 500px;
-            height: fit-content;
-            border-radius: 16px;
-            padding: 8px 24px;
-            display: flex;
-            flex-flow: column nowrap;
-            .inputField {
-              width: 100%;
-              height: 100px;
-              display: flex;
-              flex-flow: column nowrap;
-              justify-content: center;
-              align-items: center;
-              position: relative;
-              .inputTextContainer {
-                width: 100%;
-                height: 40px;
-                display: flex;
-                align-items: center;
-                p {
-                  font-size: 14px;
-                  font-family: iranyekan;
-                }
-              }
-              input {
-                width: 400px;
-                height: 40px;
-                border-radius: 8px;
-                border: 1.5px solid #d1d1d1;
-                font-family: iranyekan;
-                font-size: 14px;
-                padding: 8px;
-                transition: 300ms;
-                &:focus {
-                    outline: none;
-                    border: 1.5px solid green;
-                }
-              }
-              #submitBtn,
-              #deleteBtn {
-                width: 120px;
-                height: 45px;
-                border-radius: 6px;
-                background-color: #ef3f3e;
-                color: white;
-                border: none;
-                font-family: iranyekan;
-                font-size: 14px;
-                padding: 8px;
-                position: absolute;
-                right: 24px;
-                cursor: pointer;
-                transition: 300ms;
-                margin-top: 8px;
-                &:hover {
-                  background-color: #ba3030;
-                }
-              }
-              #resetBtn {
-                width: 110px;
-                height: 40px;
-                border-radius: 6px;
-                /* background-color: #0078D7; */
-                background-color: #48a9f8;
-                color: white;
-                border: none;
-                font-family: iranyekan;
-                font-size: 14px;
-                padding: 8px;
-                position: absolute;
-                right: 150px;
-                cursor: pointer;
-                transition: 300ms;
-                &:hover {
-                  background-color: #3985c4;
-                }
-              }
-              #adminPageBtn {
-                width: 150px;
-                height: 40px;
-                border-radius: 6px;
-                /* background-color: #0078D7; */
-                background-color: #269b42 ;
-                color: white;
-                border: none;
-                font-family: iranyekan;
-                font-size: 12px;
-                padding: 8px;
-                position: absolute;
-                left: 25px;
-                cursor: pointer;
-                transition: 300ms;
-                &:hover {
-                  background-color: #15762b;
-                }
-              }
-            }
-            .confirmBox {
-              width: 100%;
-              height: 60px;
-              background-color: green;
-              border-radius: 12px;
-              margin-bottom: 16px;
-              color: white;
-              display: flex;
-              flex-flow: column nowrap;
-              justify-content: center;
-              align-items: center;
-              display: none;
-              transition: 300ms;
-              position: relative;
-              .txt {
-                width: 100%;
-                height: 20px;
-                position: absolute;
-                bottom: 10px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-              }
-            }
-            .rejectBox {
-              width: 100%;
-              height: 90px;
-              background-color: #d72f2f;
-              border-radius: 12px;
-              margin-bottom: 16px;
-              color: white;
-              display: flex;
-              flex-flow: column nowrap;
-              justify-content: center;
-              align-items: center;
-              display: none;
-              transition: 300ms;
-              position: relative;
-              p {
-                font-size: 14px;
-                font-family: iranyekan;
-              }
-            }
+        p {
+          font-family: iranyekan;
+          font-size: 18px;
         }
-    }
-    .leftPart {
-        width: 45%;
-        height: inherit;
-        border-radius: 16px 0 0 16px;
-        padding: 16px;
-        .picturebox {
-            width: 100%;
-            height: 260px;
-            border-radius: 16px;
-            border: 1px solid #d1d1d1;
-            img {
-                width: 100%;
-                height: 100%;
-                border-radius: 16px;
-            }
+      }
+      .price {  
+        width: fit-content;
+        height: 24px;
+        margin-top: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+          font-family: iranyekan, "Franklin Gothic Medium", "Arial Narrow",
+            Arial, sans-serif;
+          font-size: 18px;
         }
-        .title {
-            width: fit-content;
-            height: 24px;
-            margin-top: 24px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            p {
-                font-family: iranyekan;
-                font-size: 18px;
-            }
+      }
+      .discount {
+        width: fit-content;
+        height: 24px;
+        margin-top: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+          font-family: iranyekan, "Franklin Gothic Medium", "Arial Narrow",
+            Arial, sans-serif;
+          font-size: 18px;
         }
-        .price {
-            width: fit-content;
-            height: 24px;
-            margin-top: 24px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            p {
-                font-family: iranyekan,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                font-size: 18px;
-            }
+      }
+      .discounted {
+        width: fit-content;
+        height: 24px;
+        margin-top: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+          font-family: iranyekan, "Franklin Gothic Medium", "Arial Narrow",
+            Arial, sans-serif;
+          font-size: 18px;
         }
-        .discount {
-            width: fit-content;
-            height: 24px;
-            margin-top: 24px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            p {
-                font-family: iranyekan,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                font-size: 18px;
-            }
-        }        
-        .discounted {
-            width: fit-content;
-            height: 24px;
-            margin-top: 24px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            p {
-                font-family: iranyekan,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                font-size: 18px;
-            }
-        }
+      }
     }
   }
 }
