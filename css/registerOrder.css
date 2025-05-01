@@ -5,7 +5,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightcoral;
   .infoBox {
     width: 80%;
     height: inherit;
@@ -27,8 +26,8 @@
         position: absolute;
         right: 0;
         p {
-            font-family: iranyekan;
-            font-size: 18px;
+          font-family: iranyekan;
+          font-size: 18px;
         }
       }
       .date {
@@ -41,8 +40,8 @@
         position: absolute;
         left: 0;
         p {
-            font-family: iranyekan;
-            font-size: 18px;
+          font-family: iranyekan;
+          font-size: 18px;
         }
       }
       .factor_text {
@@ -53,105 +52,190 @@
         justify-content: center;
         align-items: center;
         p {
-            font-family: iranyekan;
-            font-size: 18px;
+          font-family: iranyekan;
+          font-size: 18px;
         }
       }
     }
     .tableBox {
+      width: 100%;
+      height: 45%;
+      border: 1px solid #d1d1d1;
+      border-radius: 8px;
+      position: absolute;
+      top: 100px;
+      display: flex;
+      align-items: center;
+      flex-flow: column nowrap;
+      .top_part {
         width: 100%;
-        height: 45%;
-        border: 1px solid #d1d1d1;
+        height: 50%;
         border-radius: 8px;
-        position: absolute;
-        top: 100px;
         display: flex;
-        align-items: center;
-        flex-flow: column nowrap;
-        .top_part {
-            width: 100%;
-            height: 50%;
-            border-radius: 8px;
-            display: flex;
-            .items {
-                width: fit-content;
-                height: 100%;
-                padding: 16px;
-                border-radius: 0 8px 8px 0;
-                border-left: 1px solid #d1d1d1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                p {
-                    font-size: 16px;
-                    font-family: iranyekan;
-                }
-            }
-            #pro_name {
-                width: 20.5%;
-            }
-            #discounted {
-                width: 19.5%;
-            }
-            #user_realname {
-                width: 18.5%;
-            }
-            #username {
-                width: 230.5px;
-                border: none;
-            }
+        .items {
+          width: fit-content;
+          height: 100%;
+          padding: 16px;
+          border-radius: 0 8px 8px 0;
+          border-left: 1px solid #d1d1d1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          p {
+            font-size: 16px;
+            font-family: iranyekan;
+          }
         }
-        .bottom_part {
-            width: 100%;
-            height: 50%;
-            border-top: 1px solid #d1d1d1;
-            display: flex;
-            .items {
-                width: fit-content;
-                height: 100%;
-                padding: 16px;
-                border-radius: 0 8px 8px 0;
-                border-left: 1px solid #d1d1d1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                p {
-                    font-size: 16px;
-                    font-family: iranyekan;
-                }
-            }
-            #pro_code {
-                width: 78.05px;
-            }
-            #pro_name {
-                width: 20.5%;
-            }
-            #price {
-                width: 206.63px;
-            }
-            #discount {
-                width: 121.31px;
-            }
-            #discounted {
-                width: 19.5%;
-            }
-            #user_realname {
-                width: 18.5%;
-            }
-            #username {
-                width: 230.5px;
-                border: none;
-            }
+        #pro_name {
+          width: 20.5%;
         }
+        #discounted {
+          width: 19.5%;
+        }
+        #user_realname {
+          width: 18.5%;
+        }
+        #username {
+          width: 230.5px;
+          border: none;
+        }
+      }
+      .bottom_part {
+        width: 100%;
+        height: 50%;
+        border-top: 1px solid #d1d1d1;
+        display: flex;
+        .items {
+          width: fit-content;
+          height: 100%;
+          padding: 16px;
+          border-radius: 0 8px 8px 0;
+          border-left: 1px solid #d1d1d1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          p {
+            font-size: 16px;
+            font-family: iranyekan;
+          }
+        }
+        #pro_code {
+          width: 78.05px;
+        }
+        #pro_name {
+          width: 20.5%;
+        }
+        #price {
+          width: 206.63px;
+        }
+        #discount {
+          width: 121.31px;
+        }
+        #discounted {
+          width: 19.5%;
+        }
+        #user_realname {
+          width: 18.5%;
+        }
+        #username {
+          width: 230.5px;
+          border: none;
+        }
+      }
     }
   }
 }
 .address_container {
-    width: 100%;
-    height: 300px;
-    background-color: lightskyblue;
-    transform: translateY(-60px);
-    .addressBox {
-        
+  width: 100%;
+  height: 340px;
+  transform: translateY(-80px);
+  position: relative;
+  .title {
+    width: fit-content;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 10%;
+    p {
+      font-size: 18px;
+      font-family: iranyekan;
     }
+  }
+  .addressBox {
+    width: 30%;
+    height: inherit;
+    position: absolute;
+    right: 10%;
+    border-radius: 0 8px 8px 0;
+    .addressField {
+      width: 100%;
+      height: 200px;
+      border: 1px solid #d1d1d1;
+      border-radius: 8px;
+      position: absolute;
+      top: 15%;
+      bottom: 0;
+      padding: 16px;
+      p {
+        border-radius: 8px;
+        font-family: iranyekan;
+        font-size: 16px;
+        resize: none;
+        border: none;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+  button {
+    width: 100px;
+    height: 45px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    background-color: #228b22;
+    position: absolute;
+    left: 10%;
+    font-family: iranyekan;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 400ms;
+    &:hover {
+      background-color: #037303;
+    }
+  }
+  .postal_code {
+    width: fit-content;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 42%;
+    p {
+      font-size: 18px;
+      font-family: iranyekan;
+    }
+  }
+  .postal_code_box {
+    width: 120px;
+    height: 40px;
+    border: 1px solid #d1d1d1;
+    border-radius: 8px;
+    position: absolute;
+    right: 42%;
+    top: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+      font-family: iranyekan;
+      font-size: 16px;
+    }
+  }
 }
