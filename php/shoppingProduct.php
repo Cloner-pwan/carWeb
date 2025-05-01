@@ -50,13 +50,13 @@ if (isset($_POST['pro_code'])) {
         <div class="shoppingBox">
             <div class="rightPart">
                 <div class="inputBox">
-                    <form action="registerOrder.php" method="post"> 
+                    <form action="registerOrder.php" method="post">
                         <div class="inputField">
                             <div class="inputTextContainer">
                                 <p>نام و نام خانوادگی سفارش دهنده :</p>
                             </div>
                             <input type="text" name="user_realname" id="user_realname"
-                                placeholder="نام و نام خانوادگی خود را وارد کنید ..." required/>
+                                placeholder="نام و نام خانوادگی خود را وارد کنید ..." required />
                         </div>
                         <div class="inputField">
                             <div class="inputTextContainer">
@@ -68,7 +68,7 @@ if (isset($_POST['pro_code'])) {
                                     $username = $_COOKIE['username'];
                                     echo "value='$username'";
                                 }
-                                 ?> required/>
+                                ?> required />
                         </div>
                         <div class="inputField">
                             <div class="inputTextContainer">
@@ -86,6 +86,7 @@ if (isset($_POST['pro_code'])) {
                         </div>
                         <div class="inputField">
                             <input type="submit" value="ثبت سفارش" id="submitBtn" />
+                            <?php echo "<input type='hidden' name='pro_code' value='" . $pro_code . "'>" ?>
                         </div>
                         <div class="confirmBox">
                             <p>ورود شما تایید شد</p>
