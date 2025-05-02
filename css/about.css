@@ -1,0 +1,40 @@
+.about_container {
+    width: 100%;
+    height: 500px;
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .aboutBox {
+        width: 40%;
+        height: inherit;
+        background-color: rgb(114, 180, 181);
+        display: flex;
+        flex-flow: column nowrap;
+        border-radius: 16px;
+        .logo_container {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;    
+            img {
+                width: 320px;
+                height: 130px;
+            }
+        }
+        .txt_container {
+            width: 100%;
+            height: calc(100% - 200px);
+            padding: 24px;
+            display: flex;
+            justify-content: center;
+            text-align: justify;
+            p {
+                font-family: iranyekan;
+                font-size: 16px;
+                line-height: 32px;
+            }
+        }
+    }
+}

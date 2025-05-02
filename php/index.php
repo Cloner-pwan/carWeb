@@ -74,10 +74,10 @@ session_start();
             <a href="#">صفحه اصلی</a>
           </div>
           <div class="items">
-            <a href="#">درباره ما</a>
+            <a href="../html/about.html">درباره ما</a>
           </div>
           <div class="items">
-            <a href="#">ارتباط با ما</a>
+            <a href="../html/contact.html">ارتباط با ما</a>
           </div>
         </div>
       </div>
